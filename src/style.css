@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  font-family: Raleway, sans-serif;
+}
+
+h1 {
+  font-family: Josefin Sans, sans-serif;
+}
+
+.header {
+  background-color: rgb(50, 167, 145);
+  width: 100vw;
+  height: 60px;
+}
+
+.trybewarts-header-logo {
+  width: 40px;
+}
+
+.burger-icon {
+  width: 25px;
+  height: 20px;
+}
+
+.burger-icon div {
+  height: 2px;
+  width: 100%;
+  background-color: rgb(231, 231, 231);
+}
+
+.trybewarts-login {
+  position: absolute;
+  background-color: rgb(40, 131, 114);
+  top: 60px;
+  left: 0;
+  width: 100vw;
+  height: 230px;
+}
+
+.trybewarts-login.open {
+  display: flex;
+  animation: openForm 100ms ease-in;
+}
+
+@keyframes openForm {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    height: 1;
+  }
+}
