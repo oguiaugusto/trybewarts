@@ -55,7 +55,7 @@ const setContentCheckboxes = () => {
     input.className = 'mr-1';
 
     label.innerHTML = `${input.outerHTML}${value}`;
-    contentCheckboxes.appendChild(label);
+    contentCheckboxes.lastElementChild.appendChild(label);
   });
 };
 

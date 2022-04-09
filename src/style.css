@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: Raleway, sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
+  width: 100%;
 }
 
 main {
@@ -55,14 +60,36 @@ h1 {
   filter: drop-shadow(0 0 3px rgba(37, 37, 37, 0.5));
 }
 
+.evaluation-form {
+  width: 80%;
+}
+
 @media screen and ( min-width : 768px ) {
 
   .trybewarts-form-logo {
-    width: 450px;
+    width: 350px;
   }
 
   .evaluation-form {
     width: 60%;
+  }
+}
+
+@media screen and ( min-width : 1024px ) {
+
+  main {
+    justify-content: space-around;
+  }
+
+  .trybewarts-form-logo {
+    width: 450px;
+  }
+}
+
+@media screen and ( min-width : 1422px ) {
+
+  .evaluation-form {
+    width: 900px;
   }
 }
 
