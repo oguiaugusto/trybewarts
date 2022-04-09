@@ -27,31 +27,31 @@
 
   <main class="flex flex-col items-center md:flex-row-reverse mb-5">
     <img class="trybewarts-form-logo my-5" src="../images/trybewarts-colored.svg" alt="Trybewarts main logo">
-    <form class="evaluation-form flex flex-col items-center md:ml-8 md:mt-10">
+    <form id="form" class="evaluation-form flex flex-col items-center md:ml-8 md:mt-10">
       <h2 class="text-2xl font-bold text-gray-800 mt-2 mb-5 mr-1 text-center">Formulário de Avaliação</h2>
       <div class="form-inputs flex flex-col gap-6 w-full xl:flex-row xl:flex-wrap">
 
-        <input type="text" id="input-name" placeholder="Nome" class="w-full text-gray-600 p-2 rounded outline-none border border-gray-400 shadow-sm focus:shadow-blue-200 disabled:bg-gray-300 xl:w-[48%]">
-        <input type="text" id="input-lastname" placeholder="Sobrenome" class="w-full text-gray-600 p-2 rounded outline-none border border-gray-400 shadow-sm focus:shadow-blue-200 disabled:bg-gray-300 xl:w-[48%]">
-        <input type="email" id="input-email" placeholder="Email" class="w-full text-gray-600 p-2 rounded outline-none border border-gray-400 shadow-sm focus:shadow-blue-200 disabled:bg-gray-300 xl:w-[48%]">
+        <input type="text" id="input-name" placeholder="Nome" class="w-full text-gray-600 p-2 rounded outline-none border border-gray-400 shadow-sm focus:shadow-blue-200 disabled:bg-gray-300 xl:w-[48%]" required>
+        <input type="text" id="input-lastname" placeholder="Sobrenome" class="w-full text-gray-600 p-2 rounded outline-none border border-gray-400 shadow-sm focus:shadow-blue-200 disabled:bg-gray-300 xl:w-[48%]" required>
+        <input type="email" id="input-email" placeholder="Email" class="w-full text-gray-600 p-2 rounded outline-none border border-gray-400 shadow-sm focus:shadow-blue-200 disabled:bg-gray-300 xl:w-[48%]" required>
 
-        <select id="house" class="w-full text-gray-600 px-2 py-3 rounded outline-none border border-gray-400 shadow-sm focus:shadow-blue-200 disabled:bg-gray-300 bg-white xl:w-[48%]">
+        <select id="house" class="w-full text-gray-600 px-2 py-3 rounded outline-none border border-gray-400 shadow-sm focus:shadow-blue-200 disabled:bg-gray-300 bg-white xl:w-[48%]" required>
           <option disabled hidden selected>Selecione uma casa</option>
         </select>
 
         <div class="flex flex-col xl:w-[48%]">
           <p id="label-family" class="mb-1">Qual a sua família?</p>
           <label for="Frontend">
-            <input type="radio" name="family" id="Frontend" value="Frontend">
+            <input type="radio" name="family" id="Frontend" value="Front-end" required>
             Front-end
           </label>
           <label for="Backend">
-            <input type="radio" name="family" id="Backend" value="Backend">
+            <input type="radio" name="family" id="Backend" value="Back-end" required>
             Back-end
           </label>
           <label for="FullStack">
-            <input type="radio" name="family" id="FullStack" value="FullStack">
-            FullStack
+            <input type="radio" name="family" id="FullStack" value="Full Stack" required>
+            Full Stack
           </label>
         </div>
 

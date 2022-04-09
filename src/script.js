@@ -12,6 +12,8 @@ const submitBtn = document.getElementById('submit-btn');
 const commentTextarea = document.getElementById('comment');
 const counter = document.getElementById('counter');
 
+const form = document.getElementById('form');
+
 burgerIcon.addEventListener('click', () => {
   loginForm.classList.toggle('open');
 });
@@ -55,7 +57,7 @@ const setContentCheckboxes = () => {
     const input = document.createElement('input');
     input.type = 'checkbox';
     input.value = value;
-    input.className = 'mr-1';
+    input.className = 'mr-1 content-checkbox';
 
     label.innerHTML = `${input.outerHTML}${value}`;
     contentCheckboxes.lastElementChild.appendChild(label);
@@ -72,7 +74,46 @@ const setRateOptions = () => {
   }
 };
 
-submitBtn.addEventListener('click', (e) => e.preventDefault());
+const clearForm = () => {
+  while (form.children.length !== 0) form.removeChild(form.lastChild);
+};
+
+const createOutput = (value) => {
+  const p = document.createElement('p');
+  p.innerText = value;
+
+  form.appendChild(p);
+};
+
+// eslint-disable-next-line max-lines-per-function
+const setFields = () => {
+  const firstName = document.getElementById('input-name');
+  const lastName = document.getElementById('input-lastname');
+
+  const name = `Nome: ${firstName.value} ${lastName.value}`;
+  const email = `Email: ${document.getElementById('input-email').value}`;
+  const house = `Casa: ${houseSelect.value}`;
+  let family = '';
+  let subjects = [];
+  const rate = `Avaliação: ${rateSelect.value}`;
+  const notes = `Observações: ${commentTextarea.value}`;
+
+  document.getElementsByName('family').forEach((el) => {
+    if (el.checked) family = `Família: ${el.value}`;
+  });
+  document.querySelectorAll('.content-checkbox').forEach((el) => {
+    if (el.checked) subjects.push(el.value);
+  });
+  subjects = `Matérias: ${subjects.join(', ')}`;
+
+  clearForm();
+  [name, email, house, family, subjects, rate, notes].forEach(createOutput);
+};
+
+submitBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  setFields();
+});
 agreementCheckbox.addEventListener('click', ({ target: { checked } }) => {
   submitBtn.disabled = !checked;
 });
