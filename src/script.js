@@ -76,6 +76,8 @@ const setRateOptions = () => {
 
 const clearForm = () => {
   while (form.children.length !== 0) form.removeChild(form.lastChild);
+  form.classList.remove('items-center');
+  form.classList.add('items-start');
 };
 
 const createOutput = (value) => {
