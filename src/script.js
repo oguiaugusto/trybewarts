@@ -9,6 +9,9 @@ const rateSelect = document.getElementById('rate');
 const agreementCheckbox = document.getElementById('agreement');
 const submitBtn = document.getElementById('submit-btn');
 
+const commentTextarea = document.getElementById('comment');
+const counter = document.getElementById('counter');
+
 burgerIcon.addEventListener('click', () => {
   loginForm.classList.toggle('open');
 });
@@ -72,6 +75,10 @@ const setRateOptions = () => {
 submitBtn.addEventListener('click', (e) => e.preventDefault());
 agreementCheckbox.addEventListener('click', ({ target: { checked } }) => {
   submitBtn.disabled = !checked;
+});
+
+commentTextarea.addEventListener('keyup', ({ target }) => {
+  counter.innerText = 500 - target.value.length;
 });
 
 window.onload = () => {
