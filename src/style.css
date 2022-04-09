@@ -73,6 +73,13 @@ h1 {
   .evaluation-form {
     width: 60%;
   }
+
+  .trybewarts-login {
+    width: 50%;
+    left: auto;
+    right: 0;
+    border-bottom-left-radius: 1rem;
+  }
 }
 
 @media screen and ( min-width : 1024px ) {
@@ -83,6 +90,10 @@ h1 {
 
   .trybewarts-form-logo {
     width: 450px;
+  }
+
+  .trybewarts-login {
+    width: 550px;
   }
 }
 
