@@ -1,1 +1,92 @@
-<meta http-equiv="refresh" content="0; url=https://oguiaugusto.github.io/trybewarts/src/index.html" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./src/script.js" defer></script>
+  <link rel="stylesheet" href="./src/style.css">
+  <title>Trybewarts</title>
+</head>
+<body class="bg-gray-50">
+  <header class="header flex justify-between items-center px-8 select-none">
+    <img src="./images/trybewarts-header-logo.svg" alt="Trybewarts header logo" class="trybewarts-header-logo">
+    <h1 class="text-3xl font-bold text-gray-200 mt-2 mr-1">Trybewarts</h1>
+    <div id="burger-icon" class="burger-icon flex flex-col justify-between cursor-pointer hover:brightness-95">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <form id="trybewarts-login" class="trybewarts-login hidden p-10 flex-col gap-3 shadow-md">
+      <input type="email" name="email" placeholder="Email" class="text-gray-600 p-2 rounded outline-none border border-gray-400 shadow-sm focus:shadow-cyan-600 disabled:bg-gray-300" required>
+      <input type="password" name="password" placeholder="Senha" class="text-gray-600 p-2 rounded outline-none border border-gray-400 shadow-sm focus:shadow-cyan-600 disabled:bg-gray-300" required>
+      <button type="submit" class="bg-slate-700 text-gray-50 p-2 rounded duration-200 hover:bg-slate-800 active:bg-slate-900 disabled:bg-slate-600">Entrar</button>
+    </form>
+  </header>
+
+  <main class="flex flex-col items-center md:flex-row-reverse mb-5">
+    <img class="trybewarts-form-logo my-5" src="./images/trybewarts-colored.svg" alt="Trybewarts main logo">
+    <form id="form" class="evaluation-form flex flex-col items-center md:ml-8 md:mt-10">
+      <h2 class="text-2xl font-bold text-gray-800 mt-2 mb-5 mr-1 text-center">Formulário de Avaliação</h2>
+      <div class="form-inputs flex flex-col gap-6 w-full xl:flex-row xl:flex-wrap">
+
+        <input type="text" id="input-name" placeholder="Nome" class="w-full text-gray-600 p-2 rounded outline-none border border-gray-400 shadow-sm focus:shadow-blue-200 disabled:bg-gray-300 xl:w-[48%]" required>
+        <input type="text" id="input-lastname" placeholder="Sobrenome" class="w-full text-gray-600 p-2 rounded outline-none border border-gray-400 shadow-sm focus:shadow-blue-200 disabled:bg-gray-300 xl:w-[48%]" required>
+        <input type="email" id="input-email" placeholder="Email" class="w-full text-gray-600 p-2 rounded outline-none border border-gray-400 shadow-sm focus:shadow-blue-200 disabled:bg-gray-300 xl:w-[48%]" required>
+
+        <select id="house" class="w-full text-gray-600 px-2 py-3 rounded outline-none border border-gray-400 shadow-sm focus:shadow-blue-200 disabled:bg-gray-300 bg-white xl:w-[48%]" required>
+          <option disabled hidden selected>Selecione uma casa</option>
+        </select>
+
+        <div class="flex flex-col xl:w-[48%]">
+          <p id="label-family" class="mb-1">Qual a sua família?</p>
+          <label for="Frontend">
+            <input type="radio" name="family" id="Frontend" value="Front-end" required>
+            Front-end
+          </label>
+          <label for="Backend">
+            <input type="radio" name="family" id="Backend" value="Back-end" required>
+            Back-end
+          </label>
+          <label for="FullStack">
+            <input type="radio" name="family" id="FullStack" value="Full Stack" required>
+            Full Stack
+          </label>
+        </div>
+
+        <div id="content-checkboxes" class="flex flex-col xl:w-[48%]">
+          <p id="label-content" class="mb-1">Qual conteúdo você está com mais vontade de aprender?</p>
+          <div class="grid grid-rows-2 grid-cols-3 gap-2"></div>
+        </div>
+
+        <div class="flex flex-col gap-6 xl:w-full xl:flex-row-reverse justify-end">
+          <div class="xl:w-[48%]">
+            <p id="label-rate" class="mb-1">Como você avalia a Trybewarts?</p>
+            <select id="rate" class="w-full text-gray-600 px-2 py-3 rounded outline-none border border-gray-400 shadow-sm focus:shadow-blue-200 disabled:bg-gray-300 bg-white">
+              <option disabled hidden selected>Selecione um número</option>
+            </select>
+          </div>
+  
+          <div class="xl:w-[48%] relative">
+            <p class="mb-1">Deixe seu comentário:</p>
+            <textarea id="comment" rows="10" class="w-full max-h-24 text-gray-600 p-2 rounded outline-none border border-gray-400 shadow-sm focus:shadow-blue-200 disabled:bg-gray-300" maxlength="500"></textarea>
+            <p id="counter" class="absolute text-gray-500 bottom-[8px] right-[18px]">500</p>
+          </div>
+        </div>
+
+        <label for="agreement" class="xl:w-full">
+          <input type="checkbox" id="agreement">
+          Você concorda com o uso das informações acima?
+        </label>
+
+        <button type="submit" id="submit-btn" class="bg-slate-700 text-gray-50 p-2 rounded duration-200 hover:bg-slate-800 active:bg-slate-900 disabled:bg-slate-600 w-full" disabled>Enviar</button>
+      </div>
+    </form>
+  </main>
+
+  <footer class="footer flex justify-center py-2 mt-10">
+    <p class="mt-2 text-gray-200 font-semibold">Direitos reservados à Trybewarts ©</p>
+  </footer>
+</body>
+</html>
